@@ -15,6 +15,7 @@ gem "sass-rails", "~> 5.0"
 gem "simple_form"
 gem "thin"
 gem "uglifier"
+gem "haml-rails", "~> 0.9"
 
 group :development do
   gem "spring"
