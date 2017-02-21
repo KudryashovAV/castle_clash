@@ -21,7 +21,6 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    debugger
     @article = Article.find(params[:id])
     url = prepare_video_url(article_params[:video_link])
     article_params.merge!(video_link: url)
