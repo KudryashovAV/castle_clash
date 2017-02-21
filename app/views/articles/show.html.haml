@@ -9,7 +9,6 @@
   .row
     .col-md-12
       = @article.body
-      = link_to("смотреть больше", article_path(@article))
   .row
     .col-md-3
       = button_to "Редактировать статью", edit_article_path(@article.id), method: :get

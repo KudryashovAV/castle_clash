@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   def index
     @articles = Article.last(3)
+    # @hstory = Article.page(7).per(50)
+    @hstory = Article.order(created_at: :desc)
   end
 
   def show
@@ -38,7 +40,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:body, :video_link)
+    params.require(:article).permit(:body, :video_link, :header)
   end
 
   def prepare_video_url(url)
