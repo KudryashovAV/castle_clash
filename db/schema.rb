@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170210095952) do
     t.string   "body"
     t.string   "kind"
     t.string   "hashtag"
+    t.string   "video_link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

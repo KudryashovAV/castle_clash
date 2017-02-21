@@ -19,6 +19,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:body)
+    params.require(:article).permit(:body, :video_link)
   end
 end
