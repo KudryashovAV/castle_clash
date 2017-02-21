@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
-  root 'home#show'
+  root 'articles#index'
   resources :articles
   resources :blogs
 end
