@@ -1,15 +1,15 @@
 %h1{:style => "margin-top:100px;"}
   Все статьи
 - @articles.each do |article|
-  %br
-    = '----------'
-  %br
-    = article.body
-  %br
-    %iframe{ frameborder: 0, height: 200, src: article.video_link, width: 300 } if article.video_link
-  %br
-    = button_to "Редактировать статью", edit_article_path(article.id), method: :get
-    &nbsp;&nbsp;&nbsp;
-    = button_to "Удалить статью", article_path(article), method: :delete, data: { confirm: "Are you sure?" }
-  %br
-    = '----------'
+  .row
+    .row
+      .col-md-8
+        = truncate(article.body, length: 500, separator: ' ')
+        = link_to("смотреть больше", article_path(article))
+      .col-md-4
+        %iframe{ frameborder: 0, height: 300, src: article.video_link, width: 400 } if article.video_link
+    .row
+      .col-md-3
+        = button_to "Редактировать статью", edit_article_path(article.id), method: :get
+      .col-md-3
+        = button_to "Удалить статью", article_path(article), method: :delete, data: { confirm: "Are you sure?" }

@@ -1,1 +1,17 @@
-xe
+%h1{:style => "margin-top:100px;"}
+  = @article.header
+%br
+
+.row
+  .row
+    .col-md-12
+      %iframe{ frameborder: 0, height: 600, src: @article.video_link, width: "100%" } if article.video_link
+  .row
+    .col-md-12
+      = @article.body
+      = link_to("смотреть больше", article_path(@article))
+  .row
+    .col-md-3
+      = button_to "Редактировать статью", edit_article_path(@article.id), method: :get
+    .col-md-3
+      = button_to "Удалить статью", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }
